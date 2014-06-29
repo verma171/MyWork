@@ -5,11 +5,10 @@
     android:orientation="horizontal"
     android:padding="8dp">
 
-   <ImageView
+   <com.utils.CircularImageView
         android:id="@+id/imageView1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/health_and_beauty_care"
      />
       <TextView
         android:id="@+id/lblListHeader"

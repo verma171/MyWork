@@ -115,14 +115,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		lblListHeader.setTypeface(null, Typeface.BOLD);
 		lblListHeader.setText(headerTitle);
 		lblListHeader.setTextColor(Color.parseColor(getGroupTextColor(groupPosition)));
-		ImageView imageview = (ImageView)convertView.findViewById(R.id.imageView1);
+		com.utils.CircularImageView imageview = (com.utils.CircularImageView)convertView.findViewById(R.id.imageView1);
 	    
 		String imgname = places.master.get(groupPosition).placename.replace(' ', '_').toLowerCase();
 		//imageview.setImageDrawable(getDrawable(places.master.get(groupPosition).placename.replace(' ', '_') + ".png"));
 		int identifier = _context.getResources().getIdentifier(imgname,"drawable",_context.getPackageName()); 
 		imageview.setImageResource(identifier);
-		imageview.setBackgroundColor(Color.parseColor(places.master.get(groupPosition).tileColors.get(0)));
-		
+		imageview.setBorderColor(Color.parseColor(places.master.get(groupPosition).tileColors.get(0)));
+		imageview.setBorderWidth(20);
 		return convertView;
 	}
 	
