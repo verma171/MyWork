@@ -1,0 +1,112 @@
+package com.example.whereto;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.HttpResponseException;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.util.Log;
+
+
+import com.google.gson.JsonObject;
+import com.models.*;
+import com.utils.JSONParser;
+import com.utils.*;
+
+
+public class GooglePlaces {
+ 
+    // Google API Key
+    private static final String API_KEY = "AIzaSyCxbVa1WF02-7pETlfka5zFp7hV_YQsuLU";
+ 
+    // Google Places serach url's
+    private static final String PLACES_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?";
+    private static final String PLACES_TEXT_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/search/json?";
+    private static final String PLACES_DETAILS_URL = "https://maps.googleapis.com/maps/api/place/details/json?";
+
+	
+ 
+    public ArrayList<Placeresponse> findPlaces(double latitude, double longitude,
+    		   String  type) {
+
+    		  String Url = createSearchQueryString(latitude, longitude, type);
+
+    		  try {
+    			  
+    		   JSONObject object = getJSON(PLACES_SEARCH_URL,Url);
+    		   if(object == null)
+    			   return null;
+    		   JSONArray array = object.getJSONArray("results");
+
+    		   ArrayList<Placeresponse> arrayList = new ArrayList<Placeresponse>();
+    		   for (int i = 0; i < array.length(); i++) {
+    		    try {
+    		     Placeresponse place = Placeresponse
+    		       .jsonToPontoReferencia((JSONObject) array.get(i));
+    		     Log.v("Places Services ", "" + place);
+    		     arrayList.add(place);
+    		    } catch (Exception e) {
+    		    } 	
+    		   }
+    		   return arrayList;
+    		  } catch (JSONException ex) {
+    		   Logger.getLogger(GooglePlaces.class.getName()).log(Level.SEVERE,
+    		     null, ex);
+    		  }
+    		  return null;
+    		 }
+   
+    
+    public void GetPlacesDetails(String referenceString,Callback rcallback)
+    {
+      string url = PLACES_DETAILS_URL;
+    }
+
+    private String createSearchQueryString(double latitude, double longitude, String place) {
+    	  StringBuilder urlString = new StringBuilder(
+    	    PLACES_SEARCH_URL);
+    
+    	  if (place.equals("")) {
+    		   urlString.append("&location=");
+    		   urlString.append(Double.toString(latitude));
+    		   urlString.append(",");
+    		   urlString.append(Double.toString(longitude));
+    		   urlString.append("&radius=1000");
+    		   // urlString.append("&types="+place);
+    		   urlString.append("&sensor=false&key=" + API_KEY);
+    		  } else {
+    		   urlString.append("&location=");
+    		   urlString.append(Double.toString(latitude));
+    		   urlString.append(",");
+    		   urlString.append(Double.toString(longitude));
+    		   urlString.append("&radius=1000");
+    		   urlString.append("&types=" + place);
+    		   urlString.append("&sensor=false&key=" + API_KEY);
+    		  }
+    		  return urlString.toString();
+    	 }
+    
+    protected JSONObject getJSON(String url,String Url) 
+        {
+        
+    	    JSONParser parser = new JSONParser();
+           return  parser.getJSONFromUrl(Url);
+        }
+    
+
+}

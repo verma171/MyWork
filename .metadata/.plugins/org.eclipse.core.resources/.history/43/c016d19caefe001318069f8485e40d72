@@ -1,0 +1,15 @@
+package com.utils;
+
+public class Util {
+	public String getDate(long timeStamp){
+	    DateFormat objFormatter = new SimpleDateFormat("dd-MM-yyyy");
+	    objFormatter.setTimeZone(TimeZone.getTimeZone(timezone));
+
+	    Calendar objCalendar =    
+	            Calendar.getInstance(TimeZone.getTimeZone(timezone));
+	    objCalendar.setTimeInMillis(timeStamp*1000);//edit
+	    String result = objFormatter.format(objCalendar.getTime());
+	    objCalendar.clear();
+	    return result;         
+	}
+}

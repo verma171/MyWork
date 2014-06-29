@@ -1,0 +1,15 @@
+package com.utils;
+
+import android.text.format.DateFormat;
+
+public class Util {
+	 public static String usingDateFormatter(long input){
+		        Date date = new Date(input);
+		        Calendar cal = new GregorianCalendar();
+		        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MMM/dd hh:mm:ss z");
+		        sdf.setCalendar(cal);
+		        cal.setTime(date);
+		        return sdf.format(date);
+		 
+		    }
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <fragment
+        android:id="@+id/mapview"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+    <View
+    android:layout_width="fill_parent"
+    android:layout_height="1px"
+    android:background="@android:color/black"/>
+<LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+    android:background="@color/wallet_dim_foreground_holo_dark">
+
+    <ImageView
+        android:id="@+id/imgDirection"
+           android:layout_weight="1"
+             android:tag="direction"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/direction" />
+
+    <ImageView
+        android:id="@+id/imgFavorite"
+       android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:src="@drawable/favorite"
+        android:tag="favorite" />
+     
+       <ImageView
+        android:id="@+id/imgShare"
+        android:tag="share"
+        android:layout_weight="1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/share" />
+    
+</LinearLayout>
+ <View
+    android:layout_width="fill_parent"
+    android:layout_height="1px"
+    android:background="@android:color/black"/>
+    <TextView
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+         android:paddingLeft="10dp"
+        android:text="Contact"
+        android:textColor="#08088A"
+        android:textSize="14sp"
+       
+        android:background="@color/wallet_dim_foreground_holo_dark"
+         />
+    <LinearLayout android:id="@+id/contactLayout" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+         <TextView
+        android:id="@+id/lblContact"
+        style="@style/CodeFont"
+   
+         />
+          <TextView
+        android:id="@+id/lblContact1"
+        style="@style/CodeFont"
+    
+         />
+           <TextView
+        android:id="@+id/lblContact2"
+        style="@style/CodeFont"
+   
+         />
+    </LinearLayout>
+    <TextView
+            android:id="@+id/photoHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+         android:paddingLeft="10dp"
+        android:text="Photo"
+        android:textColor="#08088A"
+        android:textSize="14sp"
+       
+        android:background="@color/wallet_dim_foreground_holo_dark"
+         />
+    <LinearLayout android:id="@+id/photoLayout" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        
+        </LinearLayout>
+     
+     <TextView
+        android:id="@+id/reviewHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:text="Reviews"
+        android:textColor="#08088A"
+        android:textSize="14sp"
+        android:background="@color/wallet_dim_foreground_holo_dark"
+         />
+        <LinearLayout android:id="@+id/reviewLayout" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+       
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#000000"
+      
+        android:layout_marginLeft="20dp"
+       />
+    <TextView
+        android:id="@+id/lblReview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/lblTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#D4D4CA"
+        android:layout_marginLeft="20dp"
+       />
+
+
+        </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

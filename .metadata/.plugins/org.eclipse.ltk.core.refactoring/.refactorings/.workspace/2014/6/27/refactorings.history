@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;GridViewActivity&apos;" deleteContents="true" description="Delete resource &apos;GridViewActivity&apos;" element1="/GridViewActivity" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1404050532093"/>&#x0A;<refactoring comment="Delete resource &apos;NSM&apos;" deleteContents="false" description="Delete resource &apos;NSM&apos;" element1="/NSM" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1404050766397"/>
+</session>
