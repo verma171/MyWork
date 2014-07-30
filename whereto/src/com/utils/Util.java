@@ -5,6 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.util.TypedValue;
+
 public class Util {
 	public static String usingDateFormatter(long input)
 	{
@@ -24,4 +28,12 @@ public class Util {
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	    return sdf.format(d);
 	  }
+	public static int getDpValue(Context context,int value)
+	{
+		Resources r = context.getResources();
+		int dpvalue = (int) TypedValue.applyDimension(
+				TypedValue.COMPLEX_UNIT_DIP, value, r.getDisplayMetrics());
+	
+		return dpvalue;
+	}
 }

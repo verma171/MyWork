@@ -24,7 +24,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
+import android.location.*;
 public class NearBy extends Activity {
 	// flag for Internet connection status
 	Boolean isInternetPresent = false;
@@ -48,6 +48,7 @@ public class NearBy extends Activity {
 	// Progress dialog
 	ProgressDialog pDialog;
 	
+    Location location;
 	 
 
 	@Override
@@ -66,8 +67,24 @@ public class NearBy extends Activity {
 	            // stop executing code by return
 	            return;
 	        }
-	 
-	        // creating GPS Class object
+	        
+	        //get location from intent
+	        Intent intent = getIntent();
+		    Bundle bundle =	intent.getExtras();
+		    String string = (String)bundle.get("loc");
+	        
+		    StringTokenizer tok  = new StringTokenizer(string,",");
+		    
+		    String latitude = tok.nextToken();
+		    String longitube = tok.nextToken();
+		    
+		    location = new Location("");
+		    location.setLatitude(Double.parseDouble(latitude));
+		    location.setLongitude(Double.parseDouble(longitube));
+		    
+		    
+		/*    
+		    // creating GPS Class object
 	        gps = new GPSTracker(this);
 	 
 	        // check if GPS location can get
@@ -81,8 +98,10 @@ public class NearBy extends Activity {
 	            // stop executing code by return
 	            return;
 	        }
-	 
+	 */
 		
+		
+		Log.d("Latitube----->",String.valueOf(location.getLatitude())+" , " + String.valueOf(location.getLongitude()));
 		  LoadList();
 	}
 	
@@ -136,8 +155,8 @@ public class NearBy extends Activity {
 				double radius = 1000; // in meter
 				
 				// get nearest places
-				nearplaceslist = googlePlaces.findPlaces(gps.getLatitude(),
-						gps.getLongitude(), type[0]);
+				nearplaceslist = googlePlaces.findPlaces(location.getLatitude(),
+						location.getLongitude(), type[0]);
 				
 			} catch (Exception e) {
 				// TODO: handle exception

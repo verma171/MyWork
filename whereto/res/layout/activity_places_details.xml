@@ -19,19 +19,20 @@
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="1px"
+            android:layout_height="1dp"
             android:background="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/wallet_dim_foreground_holo_dark" >
+            android:background="@color/grayBg" >
 
             <ImageView
                 android:id="@+id/imgDirection"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:scaleType="center"
                 android:src="@drawable/direction"
                 android:tag="direction" />
 
@@ -55,73 +56,72 @@
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
-            android:background="@android:color/black" />
+            android:background="@android:color/darker_gray" />
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/wallet_dim_foreground_holo_dark"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:text="Contact"
-            android:textColor="#08088A"
-            android:textSize="14sp" />
+            style="@style/Label1Style"
+            android:text="CONTACT"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/contactLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/lblContact"
-                style="@style/CodeFont" />
+                style="@style/CodeFont"
+            
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/lblContact1"
-                style="@style/CodeFont" />
+                style="@style/CodeFont"
+                  android:text="1"
+                android:textColor="#000000"
+                android:textSize="18sp"
+              
+                />
 
             <TextView
                 android:id="@+id/lblContact2"
-                style="@style/CodeFont" />
+                style="@style/CodeFont"
+                android:textColor="#000000"
+                android:layout_marginBottom="10dp"
+                android:textSize="18sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/photoHeader"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/wallet_dim_foreground_holo_dark"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:text="Photo"
-            android:textColor="#08088A"
-            android:textSize="14sp" />
+            style="@style/Label1Style"
+            android:text="PHOTO"
+            android:textSize="16sp"
+            android:visibility="gone"
+             />
 
         <LinearLayout
             android:id="@+id/photoLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal" 
+              android:visibility="gone"
+            >
         </LinearLayout>
 
         <TextView
             android:id="@+id/reviewHeader"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/wallet_dim_foreground_holo_dark"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:text="Reviews"
-            android:textColor="#08088A"
-            android:textSize="14sp" />
+            style="@style/Label1Style"
+            android:text="REVIEWS"
+              android:visibility="gone"
+            android:textSize="16sp" />
 
         <LinearLayout 
             android:id="@+id/reviewLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+              android:visibility="gone"
             android:orientation="vertical" android:layout_marginLeft="10dp">
 
             <TextView

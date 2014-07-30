@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.example.whereto.PlacesDetails;
 import com.google.android.gms.ads.a;
 import com.google.gson.JsonArray;
@@ -62,7 +64,7 @@ public class PlaceDetailModel {
 		model.phone_number = (String)object.getString("international_phone_number");
 		model.name = (String)object.getString("name");
 		model.googleUrl = (String)object.getString("url");
-		model.website = (String)object.getString("website");
+		//model.website = (String)object.getString("website");
 		JSONArray jsonarray =  object.getJSONArray("photos");
 		JSONArray reviewArray = object.getJSONArray("reviews");
 		if(jsonarray != null && jsonarray.length()>0)
@@ -89,7 +91,7 @@ public class PlaceDetailModel {
 		}
 	   }
 		catch (Exception e) {
-			// TODO: handle exception
+			Log.e("JSON_DETAIL_MODEL",e.getMessage());
 		}
 		return model;
 	}

@@ -122,7 +122,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 		int identifier = _context.getResources().getIdentifier(imgname,"drawable",_context.getPackageName()); 
 		imageview.setImageResource(identifier);
 		imageview.setBorderColor(Color.parseColor(places.master.get(groupPosition).tileColors.get(0)));
-		imageview.setBorderWidth(20);
+		imageview.setBorderWidth(5);
 		return convertView;
 	}
 	

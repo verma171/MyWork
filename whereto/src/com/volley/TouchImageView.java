@@ -27,7 +27,7 @@ public class TouchImageView extends NetworkImageView {
 	PointF start = new PointF();
 	float minScale = 1f;
 	float maxScale = 3f;
-	float[] m;
+	float[] m; 
 
 	int viewWidth, viewHeight;
 	static final int CLICK = 3;

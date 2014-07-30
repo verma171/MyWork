@@ -23,12 +23,23 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#08088A</item>
         <item name="android:typeface">monospace</item>
-   
         <item name="android:visibility">visible</item>
         <item name="android:textSize">15sp</item>
         <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:layout_marginTop">13dp</item>
+        <item name="android:layout_marginTop">10dp</item>
     </style>
+    <style name="Label1Style">
+            <item name="android:layout_width">fill_parent</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:background">@color/grayBg</item>
+            <item name="android:paddingBottom">5dp</item>
+            <item name="android:paddingLeft">10dp</item>
+            <item name="android:paddingTop">5dp</item>
+            <item name="android:textColor">#08088A</item>
+            <item name="android:textSize">14sp</item>
+    </style>
+    
+    
     
   
 

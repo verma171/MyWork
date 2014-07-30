@@ -2,6 +2,7 @@ package com.volley;
 
 import com.volley.LruBitmapCache;
 import android.app.Application;
+import android.location.Location;
 import android.text.TextUtils;
  
 import com.android.volley.Request;
@@ -16,7 +17,7 @@ public class AppController extends Application {
  
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
- 
+    private Location mlocation;
     private static AppController mInstance;
  
     @Override
@@ -28,6 +29,8 @@ public class AppController extends Application {
     public static synchronized AppController getInstance() {
         return mInstance;
     }
+    
+    
  
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
@@ -62,4 +65,12 @@ public class AppController extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
+
+	public Location getMlocation() {
+		return mlocation;
+	}
+
+	public void setMlocation(Location mlocation) {
+		this.mlocation = mlocation;
+	}
 }
