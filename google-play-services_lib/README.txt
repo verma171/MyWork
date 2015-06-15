@@ -15,3 +15,7 @@ and set this project as a dependency.
 
 Note that if you use proguard, you will want to include the
 options from proguard.txt in your configuration.
+
+
+
+addded to chek from branch to master
