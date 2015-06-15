@@ -17,4 +17,10 @@
 # Needed for Parcelable/SafeParcelable Creators to not get stripped
 -keepnames class * implements android.os.Parcelable {
     public static final ** CREATOR;
+
+
+added by manish test 1
+
+
+
 }
